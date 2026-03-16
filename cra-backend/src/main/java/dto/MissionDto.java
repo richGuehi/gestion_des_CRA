@@ -17,9 +17,9 @@ public class MissionDto {
     @NotBlank(message = "Titre obligatoire")
     private String titre;
 
-    @NotBlank(message = "date obligatoire")
+    @NotBlank(message = "dateDebut obligatoire")
     private LocalDate dateDebut;
-    @NotBlank(message = "date obligatoire")
+    @NotBlank(message = "dateFin obligatoire")
     private LocalDate dateFin;
     private String description;
     private String motif;

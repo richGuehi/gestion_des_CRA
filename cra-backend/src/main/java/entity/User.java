@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(nullable = false)
     private String nom;
     @Column(nullable = false)
