@@ -1,13 +1,12 @@
 package repository;
 
+import entity.Assignment;
 import entity.CraDay;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface CraDayRepository extends JpaRepository<CraDay, Long> {
-
-    // tous les jours rattaché a un CRA
-    List<CraDay> findByCraId(Long craId);
+public interface AssignmentRepository extends JpaRepository<Assignment, Long> {
+    List<Assignment> findByCollaborateurId(Long collaborateurId);
 }

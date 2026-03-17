@@ -1,6 +1,5 @@
 package dto;
 
-
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
@@ -8,11 +7,9 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
-
 @Data
 @Builder
-public class UserDto {
-
+public class UserUpdateDto {
     //pour les creation et motification
 
     @NotBlank(message = "Nom Obligatoire")
@@ -20,13 +17,6 @@ public class UserDto {
 
     @NotBlank(message = "prenom Obligatoire")
     private String prenom;
-
-    @NotBlank(message = "Email Obligatoire")
-    @Email(message = "Email invalide")
-    private String email;
-
-    @NotBlank(message = "Password obligatoire")
-    private String password;
 
     @NotBlank(message = "Rôle Obligatoire")
     private String role;

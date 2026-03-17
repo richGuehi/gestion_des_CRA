@@ -19,7 +19,9 @@ public class AssignmentDto {
     private Long missionId;
 
     @NotNull(message = "Date debut Obligaoire" )
-    private LocalDate datedebut;
+    private LocalDate dateDebut;
     private LocalDate dateFin;
+
+
 
 }

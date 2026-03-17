@@ -7,8 +7,12 @@ import entity.Mission;
 import java.util.List;
 
 public interface MissionService {
-    MissionResponse create(MissionDto dto);
-    List<MissionResponse> findAll();
-    MissionResponse getById(Long id);
+    MissionResponse createMissions(MissionDto dto);
+
+    List<MissionResponse> getAllMissions();
+    MissionResponse getMissionById(Long id);
+
+    MissionResponse updateMission(Long id, MissionDto dto);
+    void deleteMissionById(Long id);
 
 }

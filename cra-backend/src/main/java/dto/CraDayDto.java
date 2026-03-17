@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 @Builder
 public class CraDayDto {
-
+    private Long id;
     @NotNull(message = "Id du cra obligatoire")
     private Long craId;
 
