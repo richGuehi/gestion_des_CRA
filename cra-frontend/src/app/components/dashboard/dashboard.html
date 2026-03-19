@@ -1,1 +1,29 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+  <h2>Vue d'ensemble</h2>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon users-icon">👥</div>
+      <div class="stat-info">
+        <h3>Total Collaborateurs</h3>
+        <p class="stat-value">{{ totalCollaborateurs() }}</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon active-icon">✅</div>
+      <div class="stat-info">
+        <h3>Collaborateurs Actifs</h3>
+        <p class="stat-value">{{ actifsCount() }}</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon pending-icon">⏳</div>
+      <div class="stat-info">
+        <h3>CRA en attente</h3>
+        <p class="stat-value">0</p>
+      </div>
+    </div>
+  </div>
+</div>
