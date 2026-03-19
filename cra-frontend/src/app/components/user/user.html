@@ -1,0 +1,67 @@
+<div class="page-container">
+  <h2>Liste des Collaborateurs</h2>
+
+  <table mat-table [dataSource]="users()" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef> Nom </th>
+      <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prenom">
+      <th mat-header-cell *matHeaderCellDef> Prénom </th>
+      <td mat-cell *matCellDef="let element"> {{element.prenom}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef> Rôle </th>
+      <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="statut">
+      <th mat-header-cell *matHeaderCellDef> Statut </th>
+      <td mat-cell *matCellDef="let element"> {{element.statut}} </td>
+    </ng-container>
+    <ng-container matColumnDef="seriorite">
+      <th mat-header-cell *matHeaderCellDef> Seriorite </th>
+      <td mat-cell *matCellDef="let element"> {{element.seriorite}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="salaire">
+      <th mat-header-cell *matHeaderCellDef> salaire </th>
+      <td mat-cell *matCellDef="let element"> {{element.salaire}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="active">
+      <th mat-header-cell *matHeaderCellDef> Actif </th>
+      <td mat-cell *matCellDef="let element"> 
+        <span [style.color]="element.active ? 'green' : 'red'" style="font-weight: bold;">
+          {{ element.active ? 'Oui' : 'Non' }}
+        </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <button class="btn-action edit" (click)="editCollaborateur(element)">
+          Éditer
+        </button>
+        <button class="btn-action delete" (click)="deleteCollaborateur(element.id)">
+          Supprimer
+        </button>
+        <button class="btn-action toggle" (click)="toggleActivation(element.id)">
+          {{ element.active ? 'Désactiver' : 'Activer' }}
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

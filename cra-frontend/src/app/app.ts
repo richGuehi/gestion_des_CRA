@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { SideBar } from './components/side-bar/side-bar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, SideBar],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
+  public router = inject(Router);
   protected readonly title = signal('cra-frontend');
 }

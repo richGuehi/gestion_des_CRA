@@ -1,0 +1,23 @@
+<div class="login-container">
+    <div class="login-card">
+        <h2>Connexion</h2>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" formControlName="email" placeholder="user0.User0@gmail.com">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Mot de Passe</label>
+                <input type="text" id="password" formControlName="password" placeholder="votre mot de passe">
+            </div>
+
+            <div class="error-msg">
+                {{errorMessage}}
+            </div>
+
+            <button type="submit" [disabled]="loginForm.invalid">Se Connecter</button>
+        </form>
+    </div>
+</div>

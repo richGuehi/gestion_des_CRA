@@ -1,0 +1,16 @@
+.app-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    //A changer
+    background-color: #f4f5f7;
+}
+
+.main-content {
+    flex: 1;
+    overflow-y: auto ;
+    padding: 24px;
+}
