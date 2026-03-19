@@ -10,9 +10,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.cbx.cra_backend.service.UserService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/users")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
     private final UserService userService;
@@ -20,6 +23,11 @@ public class UserController {
     @PostMapping
     public ResponseEntity<UserResponses> createCollaborateur(@Valid @RequestBody UserDto dto) {
         return new ResponseEntity<>(userService.createUser(dto), HttpStatus.CREATED);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<UserResponses>> getAllCollaborateurs() {
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @GetMapping("/{id}")

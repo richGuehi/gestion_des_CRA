@@ -20,7 +20,8 @@ public class DataSeeder implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // verifier et crer un compte
-        if (userRepository.findByEmail("user0.user0@gmail.com").isEmpty()) {
+        if (userRepository.findByEmail("user0.User0@gmail.com").isEmpty()) {
+
             User admin = User.builder()
                     .nom("User0")
                     .prenom("User0")
@@ -29,7 +30,6 @@ public class DataSeeder implements CommandLineRunner {
                     .role(RoleEnum.ADMIN)
                     .active(true)
                     .build();
-
             userRepository.save(admin);
         }
     }
